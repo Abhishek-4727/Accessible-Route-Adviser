@@ -1,0 +1,587 @@
+{
+  "metadata": {
+    "schemaVersion": 1,
+    "description": "RVCE Campus graph for Accessible Route Adviser. 23 real RVCE buildings/gates plus 1 demo-only isolated node. Building accessibility flags are from unverified student knowledge. Path distances and step-free values are demonstration data generated for this project.",
+    "disclaimer": "DISCLAIMER: This is a simplified model of the RVCE campus using only main buildings and two campus gates. Building accessibility flags (entrance ramp, stairs to floors, lift to floors) are based on unverified student knowledge (dataSource: STUDENT_KNOWLEDGE) and have NOT been independently verified. Path connections, distances, and step-free statuses are DEMONSTRATION DATA and do not represent real-world measurements or accessibility surveys. No formal accessibility survey has been conducted. Do not rely on this data for actual accessibility decisions. RV University buildings (other than the shared Library) are out of scope."
+  },
+  "locations": [
+    {
+      "id": "main_gate",
+      "name": "Main Gate",
+      "type": "GATE",
+      "rampAvailable": "NOT_APPLICABLE",
+      "stairsAvailable": "NOT_APPLICABLE",
+      "liftAvailable": "NOT_APPLICABLE",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Main entrance gate to RVCE campus.",
+      "layoutX": 50,
+      "layoutY": 300
+    },
+    {
+      "id": "back_gate",
+      "name": "Back Gate",
+      "type": "GATE",
+      "rampAvailable": "NOT_APPLICABLE",
+      "stairsAvailable": "NOT_APPLICABLE",
+      "liftAvailable": "NOT_APPLICABLE",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Rear entrance gate, near MV/DJ hostel area.",
+      "layoutX": 890,
+      "layoutY": 520
+    },
+    {
+      "id": "civil_dept",
+      "name": "Civil Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 150,
+      "layoutY": 300
+    },
+    {
+      "id": "cse_dept",
+      "name": "CSE Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 300,
+      "layoutY": 200
+    },
+    {
+      "id": "health_centre",
+      "name": "Health Centre",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "UNKNOWN",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Behind CSE Department.",
+      "layoutX": 350,
+      "layoutY": 100
+    },
+    {
+      "id": "eee_dept",
+      "name": "EEE Department",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 300,
+      "layoutY": 350
+    },
+    {
+      "id": "ece_dept",
+      "name": "ECE Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 300,
+      "layoutY": 470
+    },
+    {
+      "id": "krishna_hostel",
+      "name": "Krishna Hostel",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 400,
+      "layoutY": 200
+    },
+    {
+      "id": "iem_dept",
+      "name": "IEM Department",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Includes IEM Auditorium, adjacent to Admin Block.",
+      "layoutX": 470,
+      "layoutY": 300
+    },
+    {
+      "id": "quadrangle",
+      "name": "Quadrangle (AIML & Biotech)",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Houses AIML, MCA, Biotechnology, E&I departments.",
+      "layoutX": 580,
+      "layoutY": 280
+    },
+    {
+      "id": "admin_block",
+      "name": "Admin Block",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 450,
+      "layoutY": 420
+    },
+    {
+      "id": "mech_dept",
+      "name": "Mechanical Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 550,
+      "layoutY": 480
+    },
+    {
+      "id": "dth",
+      "name": "Digital Thinking Hub",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "NO",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "DTH — no ramp, stairs, or lift (single-floor structure).",
+      "layoutX": 400,
+      "layoutY": 520
+    },
+    {
+      "id": "main_canteen",
+      "name": "Main Canteen",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Mingos cafe.",
+      "layoutX": 630,
+      "layoutY": 190
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "The RV University Library building, shared with RVCE.",
+      "layoutX": 710,
+      "layoutY": 300
+    },
+    {
+      "id": "chemical_dept",
+      "name": "Chemical Engineering Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Houses Chemical and Physics departments.",
+      "layoutX": 780,
+      "layoutY": 200
+    },
+    {
+      "id": "et_dept",
+      "name": "ET Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Behind the Mingos cafe area.",
+      "layoutX": 720,
+      "layoutY": 100
+    },
+    {
+      "id": "cauvery_hostel",
+      "name": "Cauvery Hostel",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Includes the campus's only mess.",
+      "layoutX": 470,
+      "layoutY": 150
+    },
+    {
+      "id": "maths_dept",
+      "name": "Maths Department",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "layoutX": 470,
+      "layoutY": 50
+    },
+    {
+      "id": "aero_ise_dept",
+      "name": "AS and ISE Department",
+      "type": "BUILDING",
+      "rampAvailable": "YES",
+      "stairsAvailable": "YES",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "One combined building for Aerospace, Applied Science, and ISE.",
+      "layoutX": 600,
+      "layoutY": 60
+    },
+    {
+      "id": "mv_hostel",
+      "name": "MV Hostel",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "Sir M V Block.",
+      "layoutX": 800,
+      "layoutY": 320
+    },
+    {
+      "id": "chamundi_hostel",
+      "name": "Chamundi Hostel",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "NO",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "South-west of MV Hostel.",
+      "layoutX": 760,
+      "layoutY": 440
+    },
+    {
+      "id": "dj_hostel",
+      "name": "DJ Hostel",
+      "type": "BUILDING",
+      "rampAvailable": "NO",
+      "stairsAvailable": "YES",
+      "liftAvailable": "YES",
+      "dataSource": "STUDENT_KNOWLEDGE",
+      "verified": false,
+      "description": "DJ Block, behind MV Hostel along DJ Hostel Road.",
+      "layoutX": 840,
+      "layoutY": 440
+    },
+    {
+      "id": "demo_isolated",
+      "name": "Demo Isolated Building",
+      "type": "BUILDING",
+      "rampAvailable": "UNKNOWN",
+      "stairsAvailable": "UNKNOWN",
+      "liftAvailable": "UNKNOWN",
+      "dataSource": "DEMO_PLACEHOLDER",
+      "verified": false,
+      "description": "Test-only node with no path connections. Used to demonstrate the NO_CONNECTION scenario.",
+      "layoutX": 50,
+      "layoutY": 550
+    }
+  ],
+  "paths": [
+    {
+      "id": "path_001",
+      "from": "main_gate",
+      "to": "civil_dept",
+      "distanceMeters": 50,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_002",
+      "from": "civil_dept",
+      "to": "cse_dept",
+      "distanceMeters": 200,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_003",
+      "from": "civil_dept",
+      "to": "eee_dept",
+      "distanceMeters": 180,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_004",
+      "from": "cse_dept",
+      "to": "health_centre",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "UNKNOWN"
+    },
+    {
+      "id": "path_005",
+      "from": "cse_dept",
+      "to": "krishna_hostel",
+      "distanceMeters": 120,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_006",
+      "from": "cse_dept",
+      "to": "eee_dept",
+      "distanceMeters": 150,
+      "isClosed": false,
+      "stepFree": "NO"
+    },
+    {
+      "id": "path_007",
+      "from": "eee_dept",
+      "to": "ece_dept",
+      "distanceMeters": 130,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_008",
+      "from": "krishna_hostel",
+      "to": "cauvery_hostel",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_009",
+      "from": "krishna_hostel",
+      "to": "iem_dept",
+      "distanceMeters": 150,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_010",
+      "from": "cauvery_hostel",
+      "to": "maths_dept",
+      "distanceMeters": 80,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_011",
+      "from": "cauvery_hostel",
+      "to": "aero_ise_dept",
+      "distanceMeters": 120,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_012",
+      "from": "iem_dept",
+      "to": "admin_block",
+      "distanceMeters": 150,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_013",
+      "from": "iem_dept",
+      "to": "quadrangle",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_014",
+      "from": "admin_block",
+      "to": "mech_dept",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_015",
+      "from": "admin_block",
+      "to": "dth",
+      "distanceMeters": 80,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_016",
+      "from": "quadrangle",
+      "to": "main_canteen",
+      "distanceMeters": 120,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_017",
+      "from": "main_canteen",
+      "to": "library",
+      "distanceMeters": 80,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_018",
+      "from": "main_canteen",
+      "to": "et_dept",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "UNKNOWN"
+    },
+    {
+      "id": "path_019",
+      "from": "library",
+      "to": "chemical_dept",
+      "distanceMeters": 90,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_020",
+      "from": "ece_dept",
+      "to": "admin_block",
+      "distanceMeters": 200,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_021",
+      "from": "aero_ise_dept",
+      "to": "mv_hostel",
+      "distanceMeters": 250,
+      "isClosed": false,
+      "stepFree": "NO"
+    },
+    {
+      "id": "path_022",
+      "from": "mv_hostel",
+      "to": "chamundi_hostel",
+      "distanceMeters": 80,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_023",
+      "from": "mv_hostel",
+      "to": "dj_hostel",
+      "distanceMeters": 100,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_024",
+      "from": "dj_hostel",
+      "to": "back_gate",
+      "distanceMeters": 80,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_025",
+      "from": "mv_hostel",
+      "to": "back_gate",
+      "distanceMeters": 150,
+      "isClosed": false,
+      "stepFree": "UNKNOWN"
+    },
+    {
+      "id": "path_026",
+      "from": "aero_ise_dept",
+      "to": "chamundi_hostel",
+      "distanceMeters": 300,
+      "isClosed": false,
+      "stepFree": "UNKNOWN"
+    },
+    {
+      "id": "path_027",
+      "from": "eee_dept",
+      "to": "iem_dept",
+      "distanceMeters": 220,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_028",
+      "from": "health_centre",
+      "to": "cauvery_hostel",
+      "distanceMeters": 200,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_029",
+      "from": "civil_dept",
+      "to": "ece_dept",
+      "distanceMeters": 350,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_030",
+      "from": "aero_ise_dept",
+      "to": "et_dept",
+      "distanceMeters": 200,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_031",
+      "from": "chemical_dept",
+      "to": "et_dept",
+      "distanceMeters": 110,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_032",
+      "from": "main_gate",
+      "to": "ece_dept",
+      "distanceMeters": 280,
+      "isClosed": false,
+      "stepFree": "YES"
+    },
+    {
+      "id": "path_033",
+      "from": "aero_ise_dept",
+      "to": "back_gate",
+      "distanceMeters": 350,
+      "isClosed": false,
+      "stepFree": "UNKNOWN"
+    },
+    {
+      "id": "path_034",
+      "from": "quadrangle",
+      "to": "library",
+      "distanceMeters": 110,
+      "isClosed": false,
+      "stepFree": "YES"
+    }
+  ]
+}
